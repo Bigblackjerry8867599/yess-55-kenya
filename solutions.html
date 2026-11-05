@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mealhippo | Preview</title>
+    <meta name="description" content="mealhippo offers curated hospitality experiences that connect passionate hosts with community-minded attendees.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Marcellus&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3e362e;
+            --secondary: #000000;
+            --dark: #3e362e;
+            --light: #000000;
+            --accent: #ffd166;
+            --text: #333333;
+            --other: #fffdd0;
+            --some: #ffffff;
+            --card-bg: #1a1a1a;
+            --dark-amethyst: #32174d;
+            --brand-forest: #556b2f;
+            --font-display: 'Marcellus', 'Playfair Display', Georgia, serif;
+            --font-body: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --card-w: 260px;
+            --card-h: 340px;
+            --ring-radius: 300px;
+            --ring-stage-pad: 94px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            color: #ffffff;
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding-top: 0 !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-size: 19px;
+        }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.01em; }
+        h1, h2, h3 { text-wrap: balance; }
+        ::selection { background: var(--accent); color: var(--brand-forest); }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
+        /* ===== SLIM NAV ===== */
+        nav { position: sticky; top: 0; background: var(--brand-forest); z-index: 1000; border-bottom: none; padding: 0; height: 24px; display: flex; align-items: center; font-family: var(--font-body); overflow: visible; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: flex-end; height: 100%; }
+        #nav-links { list-style: none; display: flex; align-items: center; gap: 1rem; margin: 0; padding: 0; }
+        #nav-links a { text-decoration: none; color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; line-height: 1; display: block; letter-spacing: 0.04em; transition: color 0.3s ease; }
+        #nav-links a:hover { color: var(--accent); }
+        #nav-links .nav-cta { background-color: var(--accent); color: var(--primary); padding: 0.2rem 0.8rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.09em; }
+
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-family: var(--font-body); font-weight: 700; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 18px; letter-spacing: 0.04em; }
+        .btn-primary { background-color: var(--primary); color: white; }
+        .btn-primary:hover { background-color: var(--light); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+        .btn-secondary { background-color: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-secondary:hover { background-color: var(--primary); color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+
+        /* ===== HERO ===== */
+        .hero-body { background: var(--brand-forest); margin: 0; padding: 0; overflow-x: hidden; }
+        section.hero { position: relative; padding-top: 0 !important; margin-top: 0 !important; background: var(--brand-forest); overflow: hidden; }
+        .hero-container { max-width: 100%; margin: 0 auto; min-height: 640px; padding: 0; display: flex; flex-wrap: wrap; align-items: center; overflow: hidden; }
+        .hero-column { flex: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 20px; position: relative; overflow: hidden; margin-left: 5%; }
+
+        /* LEFT - Data+ : middle-left, lower, bigger */
+        .hero-column:nth-child(1) { width: 55%; position: relative; margin-left: 5%; padding: 110px 20px 40px 28px; background: transparent; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+        .hero-column:nth-child(2) { width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0; margin-left: 0; background: transparent; position: relative; }
+
+        .hero-lady { width: 100%; max-width: 720px; height: auto; object-fit: contain; object-position: bottom center; background: transparent; display: block; margin: 0 auto; filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.35)); animation: floatLady 6s ease-in-out infinite; image-rendering: -webkit-optimize-contrast; will-change: transform; pointer-events: none; margin-top: 420px; }
+        @keyframes floatLady { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+        /* RIGHT - mealhippo : bigger, lower, still top-right */
+        .headline-right { font-family: var(--font-display); font-size: 2.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background-color: rgba(255, 209, 102, 0.12); border: 1px solid rgba(255, 209, 102, 0.45); padding: 10px 30px 10px 34px; border-radius: 50px; display: inline-block; line-height: 1.1; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25); align-self: flex-end; margin-right: 5%; margin-top: 90px; margin-bottom: 0; position: relative; z-index: 10; }
+
+        /* Data+ : bigger */
+        .hero-text { font-family: var(--font-display); font-size: clamp(2.6rem, 5vw, 5rem); font-weight: 400; letter-spacing: 0.02em; line-height: 1.03; margin-bottom: 0.9rem; margin-top: 0; background: linear-gradient(135deg, #ffffff 0%, #eef3e4 55%, #cfe0b4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+
+        /* Words below Data+ : bigger */
+        .hero-paragraph { font-family: var(--font-body); font-size: clamp(1.75rem, 2.1vw, 2.1rem); line-height: 1.6; letter-spacing: 0.005em; color: rgba(255, 255, 255, 0.94); max-width: 600px; margin-bottom: 1.5rem; }
+
+        .hero-column h5 { display: none; }
+        .hero-top-left-image, .hero-smiling-person, .img-info, .sign-text, .hero-column-two-image { display: none !important; }
+
+        /* ===== HERO BUTTONS — slim silver pill ===== */
+        .hero-btns { display: flex; align-items: stretch; gap: 0; margin: 8px 0 12px calc(5% + 20px); width: 50%; max-width: 230px; min-width: 200px; border: 1.5px solid rgba(200, 205, 212, 0.7); border-radius: 999px; overflow: hidden; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22); }
+        .hero-btns .btn { flex: 1 1 50%; width: 50%; min-width: 0; display: flex; align-items: center; justify
